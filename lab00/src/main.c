@@ -7,7 +7,7 @@ int main(void) {
     printf("Name: Evan Singleton\n");
     printf("R#: 11957204\n");
     printf("Section: 002\n");
-    printf("Message: I can use GitHub for CS2413 labs! test\n");
+    printf("Message: I can use GitHub for CS2413 labs! yuh\n");
 
     return 0;
 
