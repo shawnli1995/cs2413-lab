@@ -3,14 +3,14 @@
 int two_sum_sorted(const int* nums, int n, int target, int* out_i, int* out_j) {
     if (!nums || !out_i || !out_j || n < 2) return 0;
 
-    int* i = nums;
-    int* j = nums + ((n - 1) * sizeof(int));
+    int i = 0;
+    int j = n - 1;
 
-    while(*i + *j != target) {
-        if(*i + *j < target) {
-            i += sizeof(int);
+    while(nums[i] + nums[j] != target) {
+        if(nums[i] + nums[j] < target) {
+            i++;
         } else {
-            j -= sizeof(int);
+            j--;
         }
         if(j < i) {
             return 0;
