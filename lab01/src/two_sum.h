@@ -12,6 +12,6 @@
  * - If a solution exists, ensure *out_i < *out_j
  * - Do not use the same element twice
  */
-int two_sum(const int* nums, size_t n, int target, size_t* out_i, size_t* out_j);
+int two_sum(const int* nums, int n, int target, int* out_i, int* out_j);
 
 #endif
