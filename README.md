@@ -233,6 +233,43 @@ We will cover this in class if needed.
 
 ---
 
+## FQA 
+
+### 1) Which Ubuntu version should I install?
+Recommended: **Ubuntu 22.04 LTS** (stable and widely used)
+
+Other LTS versions are also OK (ex: 24.04 LTS), but we recommend **22.04 LTS** to reduce unexpected issues.
+
+---
+
+### 2) My Ubuntu (WSL) does not open the first time
+If Ubuntu fails to open, you may need to enable required Windows features first:
+
+✅ Turn on these Windows Features:
+- **Windows Subsystem for Linux**
+- **Virtual Machine Platform**
+
+After enabling them, restart your computer and try opening Ubuntu again.
+
+---
+
+### 3) Git name has “too many arguments” error
+This happens because your folder name contains a space. You folder should be "cs2413" or "cs-2413", not "cs 2413"
+
+---
+
+### 4) Error: config.lock failed: Operation not permitted
+https://www.youtube.com/watch?v=uTw50U9sMO8
+
+---
+
+### Copy/Paste in WSL Ubuntu
+If Ctrl+V does not work, use **Ctrl+Shift+V** or **right-click** to paste.
+Recommended: run Ubuntu inside **Windows Terminal** for normal copy/paste.
+
+Open Windows Terminal, then type: wsl
+
+---
 ## Contact / Help
 
 If you run into setup issues, come a few minutes early to lab/class or ask during office hours.
