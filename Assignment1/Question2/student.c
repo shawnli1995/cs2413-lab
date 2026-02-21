@@ -16,7 +16,17 @@
 
 int majorityElement(int* nums, int numsSize) {
      // TODO: implement
+     int potential_element = 0;  //majority will start at first index
+     int majority_count = 0; //majority counter check
+     for (int i = 0; i < numsSize; i++) {
+          if (majority_count == 0)
+               potential_element = nums[i];
 
-
+          if (nums[i] == potential_element)
+              majority_count++;
+          else
+               majority_count--;
+     }
+     return potential_element;
 
 }

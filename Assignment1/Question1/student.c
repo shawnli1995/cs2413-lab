@@ -15,8 +15,22 @@
 
 void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n) {
 
+
  // TODO: implement
+int last_nums1 = (m + n) - n - 1; // last defined element of nums1
+int last_nums2 = nums2Size - 1;  //last define element of nums2
+int write = nums1Size - 1;      //index position we are going to write in
+// write backwards
+while(last_nums2 >= 0){ //finish once last element in second array is addressed
+	if (last_nums1 >= 0 && nums1[last_nums1] > nums2[last_nums2]){ //sorting
+      nums1[write] = nums1[last_nums1];
+      last_nums1 = last_nums1 - 1;
 
-
+	} else {
+     nums1[write] = nums2[last_nums2];
+	 last_nums2 = last_nums2 - 1;
+     }
+     write--;  //decrementing since we are appending backwards
+}
 
 }

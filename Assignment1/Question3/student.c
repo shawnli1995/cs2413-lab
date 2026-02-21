@@ -27,7 +27,26 @@
 
 int* plusOne(int* digits, int digitsSize, int* returnSize) {
     // TODO: implement
+    // go from last our last digit
+    for (int i = digitsSize - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i]++;
+            *returnSize = digitsSize;
+            return digits;
+        }
 
-    
+        // digit was 9 -> carry
+        digits[i] = 0;
+    }
+
+    // all digits should be 9 here
+    int* result = (int*)malloc((digitsSize + 1) * sizeof(int));
+
+    result[0] = 1;
+    for (int i = 1; i <= digitsSize; i++)
+        result[i] = 0;
+
+    *returnSize = digitsSize + 1;
+    return result;
 }
 
