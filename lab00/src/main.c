@@ -4,10 +4,10 @@ int main(void) {
     printf("CS2413 Lab00 Starter Demo\n");
 
     // TODO: Replace the placeholder information below
-    printf("Name: Shawn\n");
-    printf("R#: 11714613\n");
-    printf("Section: 002\n");
-    printf("Message: I can use GitHub for CS2413 labs!\n");
+    printf("Name: Nicholas\n");
+    printf("R#: 11935223\n");
+    printf("Section: idk\n");
+    printf("Message: I can always use GitHub for CS2413 labs!\n");
 
     return 0;
 
