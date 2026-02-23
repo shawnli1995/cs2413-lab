@@ -54,6 +54,72 @@ bool isValid(const char *s) {
     // Note:
     // - Input contains only bracket characters, per the prompt.
 
-    (void)s; // remove after implementing
-    return false; // placeholder
+if(s[0] == '\0'){  //quick check if string is empty, that is valid
+    return true;
 }
+
+    size_t s_length = strlen(s); //get size of s
+    size_t odd_comp = 2;
+    size_t zero = 0;
+
+if (s_length % odd_comp != zero) { //if odd, invalid
+        return false;
+}
+
+    typedef struct {   // intiate array stack, wrap in a struct is cleaner.
+        char stack[s_length]; //stack will be as big as the array.
+        int top;
+    } Stack;
+
+    Stack stringstack1;
+    Stack *stringstackptr;
+
+    stringstackptr = &stringstack1;
+    stringstackptr->top = -1;    //defined NULL, top of stack.
+
+    for (size_t i = 0; i < s_length; i++) { //iterate through the string
+        char c_element = s[i];
+
+        if ((c_element == '(') || (c_element == '{') || (c_element == '[')) { //if open bracket
+            //push to stack
+           stringstackptr->top++; //increment top
+           stringstackptr->stack[stringstackptr->top] = c_element; //insert element
+        }
+
+         switch(c_element){
+
+            case ')': //check if closed bracket
+            if(stringstackptr->top != -1){ //if stack is NOT empty
+               if(stringstackptr->stack[stringstackptr->top] == '('){ //if matching, then we pop
+                 stringstackptr->top--; //decrement top 
+               }
+            }
+                break;
+
+            case '}':
+             if(stringstackptr->top != -1){ //if stack is NOT empty
+               if(stringstackptr->stack[stringstackptr->top] == '{'){ //if matching, then we pop
+                 stringstackptr->top--; //decrement top 
+               }
+            }
+               break;
+
+            case ']':
+             if(stringstackptr->top != -1){ //if stack is NOT empty
+               if(stringstackptr->stack[stringstackptr->top] == '['){ //if matching, then we pop
+                 stringstackptr->top--; //decrement top 
+               }
+            }   
+                break;
+            default:
+                continue; //invalid
+        }
+        }
+
+        if(stringstackptr->top == -1){ // if stack is empty for loop.
+    return true; //valid string
+} else {
+    return false; //invalid string
+}
+    }
+
