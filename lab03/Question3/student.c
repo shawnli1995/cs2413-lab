@@ -15,4 +15,21 @@
 bool hasCycle(struct ListNode *head) {
     // TODO: implement
 
+    if (head == NULL || head->next == NULL) {
+        return false;
+    }
+
+    struct ListNode *slow = head;
+    struct ListNode *fast = head->next;
+
+    while (fast != NULL && fast->next != NULL) {
+        if (slow == fast) {
+            return true;
+        }
+
+        slow = slow->next;          // move 1 step
+        fast = fast->next->next;    // move 2 steps
+    }
+
+    return false;                   // reached end → no cycle
 }
