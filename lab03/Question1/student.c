@@ -32,11 +32,10 @@ struct ListNode* reverseList(struct ListNode* head) {
     struct ListNode* next = NULL;
 
     while (curr != NULL) {
-        next = curr->next;   // save next node
-        curr->next = prev;   // reverse pointer
-        prev = curr;         // move prev forward
-        curr = next;         // move curr forward
+        next = curr->next; 
+        curr->next = prev;  
+        prev = curr;        
+        curr = next;         
     }
-
     return prev;
 }
