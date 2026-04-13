@@ -24,7 +24,7 @@
 //   make run1
 // ------------------------------------------------------------
 
-#include "Student.h"
+#include "student.h"
 #include <stdbool.h>
 #include <stddef.h>  // size_t
 #include <string.h>  // strlen
@@ -53,7 +53,41 @@ bool isValid(const char *s) {
     //
     // Note:
     // - Input contains only bracket characters, per the prompt.
+//Today is Thursday 
 
-    (void)s; // remove after implementing
-    return false; // placeholder
+   if (s == NULL) {
+        return false;
+    }
+
+    if (strlen(s) % 2 != 0) {
+        return false;
+    }
+
+    char stack[1000];
+    int top = -1;
+
+    for (int i = 0; s[i] != '\0'; i++) {
+        char c = s[i];
+
+        if (c == '(' || c == '{' || c == '[') {
+            stack[++top] = c;
+        }
+        else {
+            if (top == -1) {
+                return false;
+            }
+
+            char open = stack[top];
+
+            if ((c == ')' && open != '(') ||
+                (c == ']' && open != '[') ||
+                (c == '}' && open != '{')) {
+                return false;
+            }
+
+            top--;
+        }
+    }
+
+    return top == -1;
 }
