@@ -19,5 +19,17 @@ q3:
 run3: q3
 	./q3
 
+q4:
+	$(CC) $(CFLAGS) question4/student.c question4/tests.c -o q4
+
+run4: q4
+	./q4
+
+q5:
+	$(CC) $(CFLAGS) question5/student.c question5/tests.c -o q5
+
+run5: q5
+	./q5
+
 clean:
-	rm -f q1 q2 q3
+	rm -f q1 q2 q3 q4 q5
